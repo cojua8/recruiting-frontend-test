@@ -1,8 +1,6 @@
 import ReactModal from "react-modal";
 
 export default function SuccessModal({ showModal, setShowModal }) {
-  console.log(showModal);
-  console.log(setShowModal);
   return (
     <ReactModal isOpen={showModal} className="bg-white">
       <div className="flex flex-col items-center">
