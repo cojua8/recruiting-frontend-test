@@ -12,7 +12,7 @@ export default function SuccessModal({ showModal, setShowModal }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-14 h-14 text-green-400"
+          className="w-14 h-14 text-green-400 "
         >
           <path
             strokeLinecap="round"

@@ -27,13 +27,13 @@ export default function InvoiceListing() {
   return (
     <div className="flex flex-col items-center mt-2">
       <p className="text-2xl font-medium">Selecciona una factura</p>
-      <div className="my-4">
+      <div className="my-4 first:rounded-t">
         {receivedInvoices.map((item, index) => (
           <InvoiceItem key={index} props={{ ...item, setSelectedInvoice }} />
         ))}
       </div>
       <p className="text-2xl font-medium">Notas de crédito</p>
-      <div className="my-4">
+      <div className="my-4 first:rounded-t">
         {creditNotes.length > 0 ? (
           creditNotes.map((item, index) => (
             <CreditNoteItem
@@ -48,7 +48,7 @@ export default function InvoiceListing() {
       <button
         className="rounded bg-fuchsia-400 mt-5"
         onClick={() => setShowModal(true)}
-        disabled={selectedCreditNote !== null}
+        disabled={selectedCreditNote === null}
       >
         <p className="text-white my-2 mx-3">Asignar</p>
       </button>
