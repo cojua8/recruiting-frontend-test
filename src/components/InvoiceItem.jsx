@@ -11,7 +11,7 @@ export default function InvoiceItem({ props }) {
         type="radio"
         value=""
         name="invoice"
-        onClick={() => props.setSelectedInvoice(props.id)}
+        onClick={() => props.setSelectedInvoice(props)}
         className="mr-2"
       />
       <label htmlFor={props.id}>

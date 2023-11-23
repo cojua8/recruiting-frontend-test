@@ -1,6 +1,11 @@
 import ReactModal from "react-modal";
 
-export default function SuccessModal({ showModal, setShowModal }) {
+export default function SuccessModal({
+  showModal,
+  setShowModal,
+  creditNoteData,
+  invoiceData,
+}) {
   return (
     <ReactModal isOpen={showModal} className="bg-white">
       <div className="flex flex-col items-center">
@@ -19,6 +24,18 @@ export default function SuccessModal({ showModal, setShowModal }) {
           />
         </svg>
         <p>Nota de crédito asignada correctamente</p>
+        <p>Nota de crédito: {creditNoteData.id}</p>
+        <p>
+          Monto: ${creditNoteData.amount} {creditNoteData.currency}
+        </p>
+        <p>Factura: {invoiceData.id}</p>
+        <p>
+          Monto: ${invoiceData.amount} {invoiceData.currency}
+        </p>
+        <p>
+          Nuevo monto: ${invoiceData.amount - creditNoteData.amount}{" "}
+          {invoiceData.currency}
+        </p>
         <button
           className="rounded bg-fuchsia-400 mt-5"
           onClick={() => setShowModal(false)}

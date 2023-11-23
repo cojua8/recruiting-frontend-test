@@ -11,7 +11,7 @@ export default function InvoiceItem({ props }) {
         type="radio"
         value=""
         name="credit_note"
-        onClick={() => props.setSelectedCreditNote(props.id)}
+        onClick={() => props.setSelectedCreditNote(props)}
       />
       <label htmlFor={props.id}>
         <div className="flex flex-row justify-between">
@@ -22,7 +22,7 @@ export default function InvoiceItem({ props }) {
           <p>
             ${props.amount} {props.currency} {usdValue}
           </p>
-          <p>{props.selectedInvoice}</p>
+          <p>{props.selectedInvoice.id}</p>
         </div>
       </label>
     </div>

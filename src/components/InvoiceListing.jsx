@@ -20,7 +20,10 @@ export default function InvoiceListing() {
   const receivedInvoices = data.filter((item) => item.type === "received");
 
   const creditNotes = data.filter(
-    (item) => item.type === "credit_note" && item.reference === selectedInvoice
+    (item) =>
+      item.type === "credit_note" &&
+      selectedInvoice !== null &&
+      item.reference === selectedInvoice.id
   );
 
   return (
@@ -51,7 +54,14 @@ export default function InvoiceListing() {
       >
         <p className="text-white my-2 mx-3">Asignar</p>
       </button>
-      <SucessModal {...{ showModal, setShowModal }} />
+      <SucessModal
+        {...{
+          showModal,
+          setShowModal,
+          creditNoteData: selectedCreditNote,
+          invoiceData: selectedInvoice,
+        }}
+      />
     </div>
   );
 }
